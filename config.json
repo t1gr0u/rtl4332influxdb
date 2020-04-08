@@ -1,0 +1,34 @@
+{
+  "name": "RTL_433 to InfluxDB",
+  "version": "dev",
+  "slug": "rtl4332influxdb",
+  "description": "Home Assistant addon which collects information from RTL433 and sends it to InfluxDB",
+  "url": "https://github.com/t1gr0u/rtl4332influxdb",
+  "startup": "before",
+  "boot": "auto",
+  "map": ["config:rw", "ssl"],
+  "devices": ["/dev/bus/usb:/dev/bus/usb:rwm"],
+  "host_network": "False",
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armv7",
+    "i386"
+  ],
+  "options": {
+    "influxdb_host": "a0d7b954-influxdb",
+    "influxdb_port": 8086,
+    "influxdb_user": "",
+    "influxdb_password": "",
+    "influxdb_database": "rtl433",
+    "rtl_device_protocol": 119
+  },
+  "schema": {
+    "influxdb_host": "str",
+    "influxdb_port": "int",
+    "influxdb_user": "str",
+    "influxdb_password": "str",
+    "influxdb_database": "str",
+    "rtl_device_protocol": "int"
+  }
+}
